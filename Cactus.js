@@ -1,6 +1,6 @@
 class Cactus {
     constructor(posX, posY, sprite) {
-        this.sizeH = floor(random(30, 60));
+        this.sizeH = floor(random(30, 80));
         this.sizeW = 20;
         this.posX = posX;
         this.posY = posY;
@@ -22,7 +22,7 @@ class Cactus {
             x: dino.posX,
             y: dino.posY - dino.size,
             width: dino.size * 0.8, // Reducir ligeramente el ancho para ajustar mejor
-            height: dino.size * 0.9 // Reducir ligeramente la altura
+            height: dino.size * 0.9 // Reducir ligeramente la altura 
         };
 
         // Verificar colisión usando un algoritmo de colisión de rectángulos

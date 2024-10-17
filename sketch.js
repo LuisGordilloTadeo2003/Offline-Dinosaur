@@ -9,15 +9,28 @@ let level = 1;
 let cactuses;
 
 function preload() {
-  // Cargar imagen de caminar
-  dinosaur.spriteWalking = loadImage("./img_SpriteVol/dino1.png");
-
   // Cargar imágenes de la animación del salto
   dinosaur.spriteJumping = [
-    loadImage("./img_SpriteVol/dino2.png"),
-    loadImage("./img_SpriteVol/dino3.png"),
-    loadImage("./img_SpriteVol/dino4.png"),
-    loadImage("./img_SpriteVol/dino5.png")
+    loadImage("./img_SpriteVol/Sprite_Frontflip/DinoFrontflip_1.png"),
+    loadImage("./img_SpriteVol/Sprite_Frontflip/DinoFrontflip_2.png"),
+    loadImage("./img_SpriteVol/Sprite_Frontflip/DinoFrontflip_3.png"),
+    loadImage("./img_SpriteVol/Sprite_Frontflip/DinoFrontflip_4.png")
+  ];
+
+  // Cargar imágenes de la animación del caminar
+  dinosaur.spriteWalking = [
+    loadImage("./img_SpriteVol/Sprite_Walk/DinoWalk_1.png"),
+    loadImage("./img_SpriteVol/Sprite_Walk/DinoWalk_2.png"),
+    loadImage("./img_SpriteVol/Sprite_Walk/DinoWalk_3.png"),
+    loadImage("./img_SpriteVol/Sprite_Walk/DinoWalk_4.png")
+  ];
+
+  // Cargar imágenes del caballo para el boss
+  dinosaur.spriteHorse = [
+    loadImage("./img_SpriteVol/Sprite_Horse/SpriteHorse_1.png"),
+    loadImage("./img_SpriteVol/Sprite_Horse/SpriteHorse_2.png"),
+    loadImage("./img_SpriteVol/Sprite_Horse/SpriteHorse_3.png"),
+    loadImage("./img_SpriteVol/Sprite_Horse/SpriteHorse_4.png")
   ];
 
   // Cargar imagen del cactus
@@ -34,8 +47,6 @@ function draw() {
   background(255);
 
   if (dinosaur.isAlive) {
-    console.log(dinosaur.spriteIndex)
-    console.log(dinosaur.isJumping)
     line(0, 265, 800, 265);
     // Actualizar y mostrar dinosaurio
     dinosaur.update();

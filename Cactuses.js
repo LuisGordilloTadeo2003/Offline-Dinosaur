@@ -13,14 +13,23 @@ class Cactuses {
             for (let i = 0; i < rep; i++) {
                 this.cactus.push(new Cactus(this.posX + i * 15, this.posY, this.sprite));
             }
-            this.spawnDelay = 100;
+            if (dinosaur.boss()) {
+                this.spawnDelay = random(40, 50);
+            } else {
+                if (this.spawnDelay < 50) {
+                    this.spawnDelay = random(50, 60);
+                } else {
+                    this.spawnDelay = random(50 - level * 0.3, 100 - level * 0.3);
+                }
+            }
         }
     }
 
     update() {
         this.spawnDelay--; // Reduce el temporizador de espera
+        console.log(this.spawnDelay);
 
-        // Actualizar velocidad de todos los cactus según el nivel
+        // Actualizar todos los cactus
         for (let i = 0; i < this.cactus.length; i++) {
             this.cactus[i].move();
             this.cactus[i].checkCollision(dinosaur);
